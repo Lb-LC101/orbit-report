@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Satellite } from '../satellite';
 
 @Component({
@@ -8,8 +8,10 @@ import { Satellite } from '../satellite';
 })
 export class OrbitListComponent implements OnInit {
 
-  constructor() { }
   @Input() satellites: Satellite[];
+
+  constructor() { }
+
 
   ngOnInit() {
   }
