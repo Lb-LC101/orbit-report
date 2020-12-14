@@ -51,9 +51,10 @@ this.displayList = this.sourceList.slice(0);
     
  
  }
- //search methodabcd1234
- 
+ //search method
+
  search(searchTerm: string): void {
+  console.log(searchTerm);
   let matchingSatellites: Satellite[] = [];
   searchTerm = searchTerm.toLowerCase();
   for(let i=0; i < this.sourceList.length; i++) {
