@@ -54,7 +54,7 @@ this.displayList = this.sourceList.slice(0);
  //search method
 
  search(searchTerm: string): void {
-  console.log(searchTerm);
+  //console.log(searchTerm);
   let matchingSatellites: Satellite[] = [];
   searchTerm = searchTerm.toLowerCase();
   for(let i=0; i < this.sourceList.length; i++) {
@@ -67,6 +67,7 @@ this.displayList = this.sourceList.slice(0);
   // this will cause Angular to re-make the table, but now only containing matches
   this.displayList = matchingSatellites;
 }
+
 
 
  
