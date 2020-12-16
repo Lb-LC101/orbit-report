@@ -14,8 +14,6 @@ export class OrbitCountsComponent implements OnInit {
   ngOnInit() {
   
   }
-
-//typeCount : number = 0;
 typeArray = ['Total', 'Space Debris', 'Communication', 'Probe', 'Positioning', 'Space Station', 'Telescope'];
 
   counts(typeToCount : string): number{
@@ -23,7 +21,6 @@ typeArray = ['Total', 'Space Debris', 'Communication', 'Probe', 'Positioning', '
 
     if (typeToCount === 'Total') {
       typeCount = this.satellites.length;   
-      console.log(typeToCount + ' ' + this.satellites);
       return typeCount;
     }
     for (let i=0; i<this.satellites.length; i++){
@@ -32,9 +29,8 @@ typeArray = ['Total', 'Space Debris', 'Communication', 'Probe', 'Positioning', '
          typeCount = typeCount + 1;
       }
     }
-    //this.satelliteCounts.totalSatelliteCount = this.satellites.length;
     
     return typeCount;
  }
-//need to figure out how to reset typecount after call;
+
 }

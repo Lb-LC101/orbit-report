@@ -51,22 +51,41 @@ this.displayList = this.sourceList.slice(0);
     
  
  }
- //search method
+   //search method
 
- search(searchTerm: string): void {
-  //console.log(searchTerm);
-  let matchingSatellites: Satellite[] = [];
-  searchTerm = searchTerm.toLowerCase();
-  for(let i=0; i < this.sourceList.length; i++) {
-     let name = this.sourceList[i].name.toLowerCase();
-     if (name.indexOf(searchTerm) >= 0) {
-        matchingSatellites.push(this.sourceList[i]);
-     }
-  }
-  // assign this.displayList to be the array of matching satellites
-  // this will cause Angular to re-make the table, but now only containing matches
-  this.displayList = matchingSatellites;
-}
+   search(searchTerm: string, searchCategory:string): void {
+   let matchingSatellites: Satellite[] = [];
+   searchTerm = searchTerm.toLowerCase();
+      console.log("search Category is: "+searchCategory)
+      if (searchCategory === "name") {
+         for(let i=0; i < this.sourceList.length; i++) {
+            let name = this.sourceList[i].name.toLowerCase();
+            if (name.indexOf(searchTerm) >= 0) {
+               matchingSatellites.push(this.sourceList[i]);
+            }
+         }
+      }  else 
+      if (searchCategory === "orbitType") {
+         for(let i=0; i < this.sourceList.length; i++) {
+            let orbitType = this.sourceList[i].orbitType.toLowerCase();
+            if (orbitType.indexOf(searchTerm) >= 0) {
+               matchingSatellites.push(this.sourceList[i]);
+            }
+         }
+      }  else 
+      if (searchCategory === "type") {
+         for(let i=0; i < this.sourceList.length; i++) {
+         let type = this.sourceList[i].type.toLowerCase();
+            if (type.indexOf(searchTerm) >= 0) {
+               matchingSatellites.push(this.sourceList[i]);
+            }   
+         }
+      }
+
+   // assign this.displayList to be the array of matching satellites
+   // this will cause Angular to re-make the table, but now only containing matches
+   this.displayList = matchingSatellites;
+   }
 
 
 
